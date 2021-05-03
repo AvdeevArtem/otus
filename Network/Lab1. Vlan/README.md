@@ -26,6 +26,10 @@
 | 7 | ParkingLot | All unused |
 | 8 | Native | N/A|
 
+
+ Схема сети
+![Схема] (https://github.com/AvdeevArtem/otus/tree/main/Network/Lab1.%20Vlan/VLAN.png)
+
 ### 1. Выполняем базовую настройку устройств
 На всех устроствах необходимо настроить пароль для доступа через консоль, VTY и в привилигерованный режим
 
@@ -202,3 +206,4 @@ PC-B> ping 192.168.3.11
 84 bytes from 192.168.3.11 icmp_seq=1 ttl=254 time=1.425 ms
 84 bytes from 192.168.3.11 icmp_seq=2 ttl=254 time=0.908 ms
 ```
+
