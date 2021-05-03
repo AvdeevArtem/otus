@@ -28,7 +28,7 @@
 
 
  Схема сети
-![Схема] (https://github.com/AvdeevArtem/otus/tree/main/Network/Lab1.%20Vlan/VLAN.png)
+![Схема](https://github.com/AvdeevArtem/otus/blob/main/Network/Lab1.%20Vlan/VLAN.png)
 
 ### 1. Выполняем базовую настройку устройств
 На всех устроствах необходимо настроить пароль для доступа через консоль, VTY и в привилигерованный режим
@@ -185,8 +185,7 @@ R1(config-if)# no shutdown
 ```
 
 
-
-Команды для проверки 
+### Проверка работы роутинга
 #### PC-B trace и ping до PC-A
 ```
 PC-B> trace 192.168.3.3
