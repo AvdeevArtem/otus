@@ -27,11 +27,11 @@
 | 8 | Native | N/A|
 
 
- Схема сети
+ #### Схема сети
 ![Схема](https://github.com/AvdeevArtem/otus/blob/main/Network/Lab1.%20Vlan/VLAN.png)
 
-### 1. Выполняем базовую настройку устройств
-На всех устроствах необходимо настроить пароль для доступа через консоль, VTY и в привилигерованный режим
+### 1. Базовая настройка устройств
+На всех устроствах необходимо настроить пароль для доступа через консоль, VTY и в привилигерованный режим, а так же настроить баннер.
 
 Configure secret password for enable
 ```
@@ -65,10 +65,11 @@ This device is for authorized personnel only.
 If you have not been provided with permission to
 access this device - disconnect at once.
 #
-
-### 2. Создаем VLAN и конфигурируем Access порты на свитчах
-Суть задания в данном случае научиться создавать VLAN и привязывать их к определенным интерфейсам
 ```
+
+### 2. Создаем VLAN и конфигурируем access порты на свитчах
+Суть задания в данном случае научиться создавать VLAN и привязывать их к определенным интерфейсам
+
 Настраиваем VLAN на свитчах S1 и S2
 ```
 (config)# vlan 3
@@ -103,6 +104,11 @@ S2(config-if)# description Management
 S2(config-if)# ip address 192.168.3.12 255.255.255.0
 S2(config-if)# ip route 0.0.0.0 0.0.0.0 192.168.3.1
 S2(config-if)# no shutdown
+```
+
+Команды для проверки
+```
+show ip interface brief
 ```
 
 Конфигурируем Access порты
