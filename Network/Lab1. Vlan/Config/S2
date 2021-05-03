@@ -1,0 +1,51 @@
+hostname S2
+!
+enable secret 5 $1$sPh7$zcn690D2sSSsQw.cjIJDS/
+!
+interface Ethernet0/0
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface Ethernet0/1
+ description "to PC-B"
+ switchport access vlan 4
+ switchport mode access
+!
+interface Ethernet0/2
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface Ethernet0/3
+ description "to S1"
+ switchport trunk allowed vlan 3,4,8
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 8
+ switchport mode trunk
+!
+interface Vlan3
+ description Managed
+ ip address 192.168.3.12 255.255.255.0
+!
+ip route 0.0.0.0 0.0.0.0 192.168.3.1
+!
+control-plane
+!
+banner motd ^C
+This device is for authorized personnel only.
+If you have not been provided with permission to
+access this device - disconnect at once.
+^C
+!
+line con 0
+ password 7 01100F175804
+ logging synchronous
+ login
+line aux 0
+line vty 0 4
+ password 7 094F471A1A0A
+ login
+!
+!
+end
