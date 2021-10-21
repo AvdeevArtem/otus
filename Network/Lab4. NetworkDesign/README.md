@@ -21,3 +21,13 @@
 ### 2. Настройка ip адресов на каждом активном порту
 Настройку портов производил согласно [документации адресного пространства](https://docs.google.com/spreadsheets/d/10A0mMolR5ZRh-VQxJZUbnySIPX98Nz76tT8GY1JKKGg/edit#gid=914062794)
 
+### 3. Настрока каждого VPC в каждом офисе в своем VLAN
+На каждом порту свитче SW2,SW3,SW9,SW10,SW29 смотрящим в сторону VPC настроил влан
+Пример конфигурации
+```
+SW5(config-vlan)#vlan 11
+SW5(config-vlan)#name "VPC11"
+SW5(config)#interface ethernet 0/2
+SW5(config-if)#switchport mode access
+SW5(config-if)#switchport access vlan 11
+SW5(config-if)#description "To VPCName"
